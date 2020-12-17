@@ -19,7 +19,6 @@ List Centreon repos
 
 %setup -q
 
-
 %build
 # %configure
 # make %{?_smp_mflags}
