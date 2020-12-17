@@ -1,0 +1,23 @@
+pipeline { 
+    agent any
+    stages {     
+        stage ("Git Checkout"){ 
+            steps {
+            script {
+                    checkout([
+                        $class: 'GitSCM',
+                        branches: [[name: '**']],
+                        doGenerateSubmoduleConfigurations: false,
+                        extensions: [],
+                        submoduleCfg: [],
+                        userRemoteConfigs: [[
+                            credentialsId: 'github2',
+                            url: 'https://github.com/Sll19/Fichiers'
+                        ]]
+                    ])
+                
+                }
+            }
+        } 
+    }
+}
